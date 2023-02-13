@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('person_details', function (Blueprint $table) {
             // $table->id();
+            
+            $table -> bigInteger('person_id') -> unsigned();
             $table->string("email");
             $table->string("phone");
             $table->timestamps();

@@ -20,9 +20,16 @@ return new class extends Migration
             $table -> foreign('person_id')
                     -> references('id')
                     -> on('people');
-
         });
-        
+
+        Schema::table('person_details', function (Blueprint $table) {
+            
+            $table -> foreign('person_id')
+                    -> references('id')
+                    -> on('people');
+            
+            $table -> primary('person_id');
+        });
     }
 
     /**
